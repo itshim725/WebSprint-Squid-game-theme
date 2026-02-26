@@ -30,28 +30,28 @@ const gameDetails = {
 		elimination: 'Detected movement during RED LIGHT causes immediate elimination.'
 	},
 	Honeycomb: {
-		round: 'ROUND 02 · HONEYCOMB',
+		round: 'ROUND 03 · HONEYCOMB',
 		description: 'A fragile sugar disk must be carved cleanly along the chosen symbol path under pressure.',
 		rule: 'Trace the marked shape without cracking outside the outline.',
 		objective: 'Extract the complete shape intact within the time window.',
 		elimination: 'Any major crack or broken symbol results in elimination.'
 	},
 	'Danger Dodge': {
-		round: 'ROUND 02.5 · DANGER DODGE',
+		round: 'ROUND 02 · DANGER DODGE',
 		description: 'A high-stakes dodgeball round where players must evade rapid throws in a shrinking court.',
 		rule: 'If struck by a live throw you are out, but a direct catch can revive one teammate.',
 		objective: 'Keep your side alive until the opposing team is fully eliminated.',
 		elimination: 'Any direct body hit from an active ball causes immediate elimination.'
 	},
 	'Tug of War': {
-		round: 'ROUND 03 · TUG OF WAR',
+		round: 'ROUND 04 · TUG OF WAR',
 		description: 'Two teams clash on elevated platforms where rhythm and timing matter more than raw strength.',
 		rule: 'Pull in coordinated bursts and maintain team balance.',
 		objective: 'Drag the opponent beyond the center drop marker.',
 		elimination: 'Losing side falls and is eliminated.'
 	},
 	'Glass Bridge': {
-		round: 'ROUND 04 · GLASS BRIDGE',
+		round: 'ROUND 05 · GLASS BRIDGE',
 		description: 'Players cross a suspended bridge by choosing tempered panels while avoiding fragile glass.',
 		rule: 'Step only on stable panels and advance before time runs out.',
 		objective: 'Reach the final platform by making correct panel choices.',
@@ -318,3 +318,4 @@ contactForm.addEventListener('submit', (event) => {
 });
 
 renderLeaderboard();
+
