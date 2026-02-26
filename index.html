@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Glass Jump Arena | 3D Game Experience</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+	<header class="site-header">
+		<nav class="navbar container">
+			<a href="#home" class="brand">GLASS JUMP</a>
+			<button class="menu-toggle" aria-label="Toggle menu">☰</button>
+			<ul class="nav-links">
+				<li><a href="#games">Games</a></li>
+				<li><a href="#register">Register</a></li>
+				<li><a href="#leaderboard">Leaderboard</a></li>
+				<li><a href="#testimonials">Testimonials</a></li>
+				<li><a href="#blog">Blog</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+			<button id="themeToggle" class="btn btn-ghost" type="button">Neon Theme</button>
+		</nav>
+	</header>
+
+	<main>
+		<section id="home" class="hero section">
+			<div class="container hero-grid">
+				<div class="hero-copy reveal">
+					<p class="eyebrow">3D EXPERIENCE · SQUID STYLE</p>
+					<div class="hero-banner" role="note" aria-label="Event highlight banner">
+						<strong>LIVE EVENT:</strong>
+						<span>Glass Jump Finals · 50,000 Credits Prize Pool</span>
+					</div>
+					<h1>Survive The <span>Squid Game</span> Challenge</h1>
+					<p>
+						Step into a high-stakes 3D game-inspired arena. Explore game rounds,
+						register as a player, and climb a live leaderboard with immersive visuals.
+					</p>
+					<div class="hero-actions">
+						<a href="#register" class="btn btn-primary">Play Now — Enter Arena</a>
+						<a href="#games" class="btn btn-secondary">Explore Rounds</a>
+					</div>
+				</div>
+
+				<div class="hero-visual reveal" id="hero3D" aria-hidden="true">
+					<div class="bridge-3d">
+						<div class="panel p1">SAFE</div>
+						<div class="panel p2">RISK</div>
+						<div class="panel p3 alive">ALIVE</div>
+						<div class="panel p4 dead">DEAD</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="games" class="section">
+			<div class="container">
+				<h2 class="section-title reveal">Game Rounds</h2>
+				<div class="cards-grid">
+					<article class="game-card reveal" data-game="Red Light, Green Light" data-image="red.webp">
+						<h3>Red Light, Green Light</h3>
+						<p>Run only on green and freeze instantly on red to avoid elimination.</p>
+						<span class="tag">Reaction Test</span>
+					</article>
+					<article class="game-card reveal" data-game="Danger Dodge" data-image="dodge.webp">
+						<h3>Danger Dodge</h3>
+						<p>Dodge incoming balls, catch clean throws to revive teammates, and avoid headshots to survive.</p>
+						<span class="tag">Dodgeball Rules</span>
+					</article>
+					<article class="game-card reveal" data-game="Honeycomb" data-image="honeycomb.webp">
+						<h3>Honeycomb</h3>
+						<p>Carve out delicate shapes with precision before the timer runs out.</p>
+						<span class="tag">Precision Round</span>
+					</article>
+					<article class="game-card reveal" data-game="Tug of War" data-image="tug.webp">
+						<h3>Tug of War</h3>
+						<p>Pull in sync with your team and use strategy to overpower rivals.</p>
+						<span class="tag">Team Battle</span>
+					</article>
+					<article class="game-card reveal" data-game="Glass Bridge" data-image="glass.webp">
+						<h3>Glass Bridge</h3>
+						<p>Pick the safe glass path and cross the bridge without falling.</p>
+						<span class="tag">High-Risk Finale</span>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="register" class="section alt">
+			<div class="container register-grid">
+				<div class="reveal">
+					<h2 class="section-title">Player Registration</h2>
+					<p>Enter your details to get your arena ID and a starter score.</p>
+					<p id="formStatus" class="form-status" aria-live="polite"></p>
+				</div>
+
+				<form id="registrationForm" class="card-form reveal" novalidate>
+					<label>
+						Full Name
+						<input type="text" id="name" name="name" placeholder="Player Name" required />
+						<small class="error" data-for="name"></small>
+					</label>
+
+					<label>
+						Email
+						<input type="email" id="email" name="email" placeholder="you@example.com" required />
+						<small class="error" data-for="email"></small>
+					</label>
+
+					<label>
+						Age
+						<input type="number" id="age" name="age" min="18" max="99" required />
+						<small class="error" data-for="age"></small>
+					</label>
+
+					<label>
+						Preferred Mode
+						<select id="mode" name="mode" required>
+							<option value="">Select mode</option>
+							<option value="solo">Solo Survival</option>
+							<option value="squad">Squad Strategy</option>
+							<option value="speed">Speed Elimination</option>
+						</select>
+						<small class="error" data-for="mode"></small>
+					</label>
+
+					<label class="checkbox">
+						<input type="checkbox" id="consent" name="consent" />
+						I agree to the game rules and elimination policy.
+					</label>
+					<small class="error" data-for="consent"></small>
+
+					<button type="submit" class="btn btn-primary">Register Player</button>
+				</form>
+			</div>
+		</section>
+
+		<section id="leaderboard" class="section">
+			<div class="container">
+				<div class="section-head reveal">
+					<h2 class="section-title">Live Leaderboard</h2>
+					<button id="simulateRound" class="btn btn-secondary" type="button">Simulate Round</button>
+				</div>
+
+				<div class="table-wrap reveal">
+					<table>
+						<thead>
+							<tr>
+								<th>Rank</th>
+								<th>Player</th>
+								<th>Mode</th>
+								<th>Score</th>
+							</tr>
+						</thead>
+						<tbody id="leaderboardBody"></tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+
+		<section id="testimonials" class="section alt">
+			<div class="container">
+				<h2 class="section-title reveal">Client Testimonials</h2>
+				<div class="cards-grid three">
+					<article class="quote-card reveal">
+						<p>“The 3D bridge visuals made our gaming campaign unforgettable.”</p>
+						<h4>Nova Interactive</h4>
+					</article>
+					<article class="quote-card reveal">
+						<p>“Fast, immersive, and beautifully responsive across all devices.”</p>
+						<h4>Pixel Forge Studio</h4>
+					</article>
+					<article class="quote-card reveal">
+						<p>“Clean UX with high-stakes energy. Exactly what we wanted.”</p>
+						<h4>Dark Mode Labs</h4>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="blog" class="section">
+			<div class="container">
+				<h2 class="section-title reveal">Design Insights Blog</h2>
+				<div class="cards-grid three">
+					<article class="blog-card reveal">
+						<h3>Building Depth with CSS 3D</h3>
+						<p>How transform stacking creates cinematic game UI composition.</p>
+					</article>
+					<article class="blog-card reveal">
+						<h3>Micro-Interactions in Competitive UX</h3>
+						<p>Using subtle motion cues to guide high-pressure player choices.</p>
+					</article>
+					<article class="blog-card reveal">
+						<h3>Minimalist Forms, Maximum Conversion</h3>
+						<p>Simple registration flows that still feel premium and immersive.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact" class="section alt">
+			<div class="container contact-wrap reveal">
+				<h2 class="section-title">Contact</h2>
+				<form class="card-form minimalist" id="contactForm">
+					<label>
+						Name
+						<input type="text" placeholder="Your name" required />
+					</label>
+					<label>
+						Email
+						<input type="email" placeholder="Your email" required />
+					</label>
+					<label>
+						Message
+						<textarea rows="4" placeholder="Tell us about your project" required></textarea>
+					</label>
+					<button type="submit" class="btn btn-primary">Send Message</button>
+					<p id="contactStatus" class="form-status" aria-live="polite"></p>
+				</form>
+			</div>
+		</section>
+	</main>
+
+	<div id="gameModal" class="game-modal" role="dialog" aria-modal="true" aria-labelledby="gameModalTitle" aria-hidden="true">
+		<div class="game-modal-card">
+			<button id="closeGameModal" class="modal-close" type="button" aria-label="Close game preview">✕</button>
+			<h3 id="gameModalTitle">Game Preview</h3>
+			<div class="game-modal-content">
+				<img id="gameModalImage" src="" alt="Selected game preview" />
+				<div class="modal-info">
+					<p id="gameModalRound" class="modal-kicker">ROUND INFO</p>
+					<p id="gameModalDesc" class="modal-desc"></p>
+					<ul class="modal-rules">
+						<li><strong>RULE:</strong> <span id="gameModalRule"></span></li>
+						<li><strong>OBJECTIVE:</strong> <span id="gameModalObjective"></span></li>
+						<li><strong>ELIMINATION:</strong> <span id="gameModalElimination"></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="site-footer">
+		<p>© 2026 Glass Jump Arena · Play smart. Jump safer.</p>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+</html>
